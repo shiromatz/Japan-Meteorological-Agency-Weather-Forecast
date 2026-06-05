@@ -14,14 +14,40 @@
 
 ## 詳細天気予報 (`forecast`)
 
-地域ごとの詳細天気予報 JSON を月単位にまとめ、CSV 化したものです。全地域・1か月分の CSV を ZIP 圧縮しています。
+地域ごとの詳細天気予報 JSON を月単位にまとめ、CSV 化したものです。全地域・1か月分の CSV を ZIP 圧縮しています。これは過去に発表された予報の履歴であり、後から確定した実際の天気ではありません。
 
 - 格納場所: `forecast/forecast_YYYYMM.zip`
 - ZIP 内ファイル名: `forecast_YYYYMM_{地域コード}.csv`
 - 収集元: `https://www.jma.go.jp/bosai/forecast/data/forecast/{region_code}.json`
 - 期間: `2021-11-04` 以降
 - 収集間隔: 1日3回前後
-- 備考: 一部の日・地域に取得漏れがあります。定時発表に加えて訂正報があった場合、1日4回以上になることがあります。
+- 更新: 1か月分を ZIP 化し、原則として翌月初にアップロードします。
+- 備考: 既知の欠測期間はありませんが、未知の取得漏れが含まれる可能性があります。定時発表に加えて訂正報があった場合、1日4回以上になることがあります。
+
+通常の地域コードの CSV 列:
+
+- `publishingOffice`: 発表官署名
+- `reportDatetime`: 発表時刻
+- `timeDefine`: 予報対象日時
+- `areaName`: 対象区域名
+- `areaCode`: 対象区域コード
+- `weatherCodes`: 天気コード。対応表は `weatherCode.csv` / `weatherCodes.json` を参照してください。
+- `weathers`: 天気の予報文
+- `winds`: 風の予報文
+- `waves`: 波の予報文
+- `pops`: 降水確率
+- `temps`: 気温
+- `tempsMin`: 最低気温
+- `tempsMax`: 最高気温
+- `tempsMinUpper`: 最低気温の予測範囲上限
+- `tempsMaxUpper`: 最高気温の予測範囲上限
+- `tempsMinLower`: 最低気温の予測範囲下限
+- `tempsMaxLower`: 最高気温の予測範囲下限
+- `reliabilities`: 信頼度
+
+全国予報の `forecast_YYYYMM_010000.csv` は、上記に加えて `regionName` と `regionCode` を持ち、予報対象日時の列名が `time` です。各列は元 JSON の時系列ごとに出力しているため、対象時刻や対象区域によって空欄になる項目があります。
+
+`reportDatetime` は「その予報が発表された時刻」です。`timeDefine` または `time` は「予報の対象となる時刻」です。例えば、5月1日5時発表の予報の中に、5月2日0時を対象にした行が含まれることがあります。
 
 地域コード:
 
@@ -40,14 +66,44 @@
 
 ## 概要予報 (`overview_forecast`)
 
-地域ごとの概要予報 JSON を月単位にまとめ、CSV 化したものです。全地域・1か月分の CSV を ZIP 圧縮しています。
+地域ごとの概要予報 JSON を月単位にまとめ、CSV 化したものです。全地域・1か月分の CSV を ZIP 圧縮しています。これは過去に発表された予報文の履歴であり、後から確定した実際の天気ではありません。
 
 - 格納場所: `overview_forecast/overview_forecast_YYYYMM.zip`
 - ZIP 内ファイル名: `overview_forecast_YYYYMM_{地域コード}.csv`
 - 収集元: `https://www.jma.go.jp/bosai/forecast/data/overview_forecast/{region_code}.json`
 - 期間: `2021-12-15` 以降
 - 収集間隔: 1日3回前後
+- 更新: 1か月分を ZIP 化し、原則として翌月初にアップロードします。
+- 備考: 既知の欠測期間はありませんが、未知の取得漏れが含まれる可能性があります。
 - 地域コード: `010000` を除き、詳細天気予報と同じです。
+
+CSV 列:
+
+- `publishingOffice`: 発表官署名
+- `reportDatetime`: 発表時刻
+- `targetArea`: 対象地域
+- `headlineText`: 見出し文
+- `text`: 概要予報本文。元 JSON の改行はスペースに置換しています。
+
+`reportDatetime` は「その概要予報が発表された時刻」です。概要予報の対象日時は独立した日時列ではなく、`headlineText` や `text` の本文中に文章として含まれます。
+
+## 天気コード対応表
+
+`forecast` の `weatherCodes` を読み取るための対応表として、以下の2形式を置いています。
+
+- `weatherCode.csv`: CSV 形式の天気コード対応表
+- `weatherCodes.json`: JSON 形式の天気コード対応表
+
+`weatherCode.csv` の列:
+
+- `weatherCode`: 天気コード
+- `weatherPictDay`: 昼の天気アイコンファイル名
+- `weatherPictNight`: 夜の天気アイコンファイル名
+- `Group`: 天気分類グループ
+- `weatherJ`: 日本語の天気名
+- `weatherE`: 英語の天気名
+
+`weatherCodes.json` は `weatherCode` をキーにした JSON オブジェクトで、値は `weatherPictDay`、`weatherPictNight`、`Group`、`weatherJ`、`weatherE` の順の配列です。
 
 ## 警報・注意報 (`warning`)
 

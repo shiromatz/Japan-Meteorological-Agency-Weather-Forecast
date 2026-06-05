@@ -14,14 +14,40 @@ I previously collected `overview_week`, but it is not published here because tha
 
 ## Detailed Forecasts (`forecast`)
 
-Detailed forecast JSON files are grouped by month and converted to CSV. Each ZIP contains CSV files for all regions in the month.
+Detailed forecast JSON files are grouped by month and converted to CSV. Each ZIP contains CSV files for all regions in the month. This is a history of forecasts as they were issued in the past, not later-confirmed observed weather.
 
 - Location: `forecast/forecast_YYYYMM.zip`
 - File name inside each ZIP: `forecast_YYYYMM_{region_code}.csv`
 - Source: `https://www.jma.go.jp/bosai/forecast/data/forecast/{region_code}.json`
 - Period: from `2021-11-04`
 - Collection interval: around 3 times per day
-- Notes: Some dates or regions may be missing. If correction reports are issued in addition to regular reports, a day may have 4 or more records.
+- Update timing: one month of data is zipped and normally uploaded at the beginning of the following month.
+- Notes: There are no known missing periods, but unknown collection gaps may exist. If correction reports are issued in addition to regular reports, a day may have 4 or more records.
+
+CSV columns for ordinary region codes:
+
+- `publishingOffice`: issuing office name
+- `reportDatetime`: report issue time
+- `timeDefine`: forecast target datetime
+- `areaName`: target area name
+- `areaCode`: target area code
+- `weatherCodes`: weather code. See `weatherCode.csv` / `weatherCodes.json`.
+- `weathers`: forecast weather text
+- `winds`: forecast wind text
+- `waves`: forecast wave text
+- `pops`: probability of precipitation
+- `temps`: temperature
+- `tempsMin`: minimum temperature
+- `tempsMax`: maximum temperature
+- `tempsMinUpper`: upper bound of the minimum temperature forecast range
+- `tempsMaxUpper`: upper bound of the maximum temperature forecast range
+- `tempsMinLower`: lower bound of the minimum temperature forecast range
+- `tempsMaxLower`: lower bound of the maximum temperature forecast range
+- `reliabilities`: reliability class
+
+The national forecast file, `forecast_YYYYMM_010000.csv`, additionally has `regionName` and `regionCode`, and its forecast target datetime column is named `time`. Rows are emitted from the source JSON time series, so some fields are blank depending on the target time and area.
+
+`reportDatetime` is the time when the forecast was issued. `timeDefine` or `time` is the datetime targeted by the forecast. For example, a forecast issued at 05:00 on May 1 may contain a row targeting 00:00 on May 2.
 
 Region codes:
 
@@ -40,14 +66,44 @@ Region codes:
 
 ## Overview Forecasts (`overview_forecast`)
 
-Overview forecast JSON files are grouped by month and converted to CSV. Each ZIP contains CSV files for all regions in the month.
+Overview forecast JSON files are grouped by month and converted to CSV. Each ZIP contains CSV files for all regions in the month. This is a history of forecast text as it was issued in the past, not later-confirmed observed weather.
 
 - Location: `overview_forecast/overview_forecast_YYYYMM.zip`
 - File name inside each ZIP: `overview_forecast_YYYYMM_{region_code}.csv`
 - Source: `https://www.jma.go.jp/bosai/forecast/data/overview_forecast/{region_code}.json`
 - Period: from `2021-12-15`
 - Collection interval: around 3 times per day
+- Update timing: one month of data is zipped and normally uploaded at the beginning of the following month.
+- Notes: There are no known missing periods, but unknown collection gaps may exist.
 - Region codes: same as the detailed forecasts, except `010000` is not included.
+
+CSV columns:
+
+- `publishingOffice`: issuing office name
+- `reportDatetime`: report issue time
+- `targetArea`: target area
+- `headlineText`: headline text
+- `text`: overview forecast body. Line breaks in the source JSON are replaced with spaces.
+
+`reportDatetime` is the time when the overview forecast was issued. The target dates and times of the overview forecast are not stored in separate datetime columns; they are included as prose in `headlineText` or `text`.
+
+## Weather Code Tables
+
+The following two files provide lookup tables for `weatherCodes` in `forecast`.
+
+- `weatherCode.csv`: weather code table in CSV format
+- `weatherCodes.json`: weather code table in JSON format
+
+Columns in `weatherCode.csv`:
+
+- `weatherCode`: weather code
+- `weatherPictDay`: daytime weather icon file name
+- `weatherPictNight`: nighttime weather icon file name
+- `Group`: weather category group
+- `weatherJ`: Japanese weather name
+- `weatherE`: English weather name
+
+`weatherCodes.json` is a JSON object keyed by `weatherCode`. Each value is an array in the order `weatherPictDay`, `weatherPictNight`, `Group`, `weatherJ`, and `weatherE`.
 
 ## Warnings and Advisories (`warning`)
 
