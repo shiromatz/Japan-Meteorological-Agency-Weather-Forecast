@@ -1,0 +1,317 @@
+{
+  "33": {
+    "warningCode": "33",
+    "phenomenon": "大雨",
+    "level": "5",
+    "category": "特別警報",
+    "nameJa": "レベル5大雨特別警報",
+    "nameEn": "Level 5 heavy rain special warning",
+    "notes": ""
+  },
+  "43": {
+    "warningCode": "43",
+    "phenomenon": "大雨",
+    "level": "4",
+    "category": "危険警報",
+    "nameJa": "レベル4大雨危険警報",
+    "nameEn": "Level 4 heavy rain danger warning",
+    "notes": ""
+  },
+  "03": {
+    "warningCode": "03",
+    "phenomenon": "大雨",
+    "level": "3",
+    "category": "警報",
+    "nameJa": "レベル3大雨警報",
+    "nameEn": "Level 3 heavy rain warning",
+    "notes": ""
+  },
+  "10": {
+    "warningCode": "10",
+    "phenomenon": "大雨",
+    "level": "2",
+    "category": "注意報",
+    "nameJa": "レベル2大雨注意報",
+    "nameEn": "Level 2 heavy rain advisory",
+    "notes": ""
+  },
+  "39": {
+    "warningCode": "39",
+    "phenomenon": "土砂災害",
+    "level": "5",
+    "category": "特別警報",
+    "nameJa": "レベル5土砂災害特別警報",
+    "nameEn": "Level 5 landslide disaster special warning",
+    "notes": ""
+  },
+  "49": {
+    "warningCode": "49",
+    "phenomenon": "土砂災害",
+    "level": "4",
+    "category": "危険警報",
+    "nameJa": "レベル4土砂災害危険警報",
+    "nameEn": "Level 4 landslide disaster danger warning",
+    "notes": ""
+  },
+  "09": {
+    "warningCode": "09",
+    "phenomenon": "土砂災害",
+    "level": "3",
+    "category": "警報",
+    "nameJa": "レベル3土砂災害警報",
+    "nameEn": "Level 3 landslide disaster warning",
+    "notes": ""
+  },
+  "29": {
+    "warningCode": "29",
+    "phenomenon": "土砂災害",
+    "level": "2",
+    "category": "注意報",
+    "nameJa": "レベル2土砂災害注意報",
+    "nameEn": "Level 2 landslide disaster advisory",
+    "notes": ""
+  },
+  "38": {
+    "warningCode": "38",
+    "phenomenon": "高潮",
+    "level": "5",
+    "category": "特別警報",
+    "nameJa": "レベル5高潮特別警報",
+    "nameEn": "Level 5 storm surge special warning",
+    "notes": ""
+  },
+  "48": {
+    "warningCode": "48",
+    "phenomenon": "高潮",
+    "level": "4",
+    "category": "危険警報",
+    "nameJa": "レベル4高潮危険警報",
+    "nameEn": "Level 4 storm surge danger warning",
+    "notes": ""
+  },
+  "08": {
+    "warningCode": "08",
+    "phenomenon": "高潮",
+    "level": "3",
+    "category": "警報",
+    "nameJa": "レベル3高潮警報",
+    "nameEn": "Level 3 storm surge warning",
+    "notes": ""
+  },
+  "19": {
+    "warningCode": "19",
+    "phenomenon": "高潮",
+    "level": "2",
+    "category": "注意報",
+    "nameJa": "レベル2高潮注意報",
+    "nameEn": "Level 2 storm surge advisory",
+    "notes": ""
+  },
+  "32": {
+    "warningCode": "32",
+    "phenomenon": "暴風雪・風雪",
+    "level": null,
+    "category": "特別警報",
+    "nameJa": "暴風雪特別警報",
+    "nameEn": "Blizzard special warning",
+    "notes": ""
+  },
+  "02": {
+    "warningCode": "02",
+    "phenomenon": "暴風雪・風雪",
+    "level": null,
+    "category": "警報",
+    "nameJa": "暴風雪警報",
+    "nameEn": "Blizzard warning",
+    "notes": ""
+  },
+  "13": {
+    "warningCode": "13",
+    "phenomenon": "暴風雪・風雪",
+    "level": null,
+    "category": "注意報",
+    "nameJa": "風雪注意報",
+    "nameEn": "Snowstorm advisory",
+    "notes": "暴風雪警報に対応する注意報は風雪注意報"
+  },
+  "35": {
+    "warningCode": "35",
+    "phenomenon": "暴風・強風",
+    "level": null,
+    "category": "特別警報",
+    "nameJa": "暴風特別警報",
+    "nameEn": "Storm special warning",
+    "notes": ""
+  },
+  "05": {
+    "warningCode": "05",
+    "phenomenon": "暴風・強風",
+    "level": null,
+    "category": "警報",
+    "nameJa": "暴風警報",
+    "nameEn": "Storm warning",
+    "notes": ""
+  },
+  "15": {
+    "warningCode": "15",
+    "phenomenon": "暴風・強風",
+    "level": null,
+    "category": "注意報",
+    "nameJa": "強風注意報",
+    "nameEn": "Strong wind advisory",
+    "notes": "暴風警報に対応する注意報は強風注意報"
+  },
+  "36": {
+    "warningCode": "36",
+    "phenomenon": "大雪",
+    "level": null,
+    "category": "特別警報",
+    "nameJa": "大雪特別警報",
+    "nameEn": "Heavy snow special warning",
+    "notes": ""
+  },
+  "06": {
+    "warningCode": "06",
+    "phenomenon": "大雪",
+    "level": null,
+    "category": "警報",
+    "nameJa": "大雪警報",
+    "nameEn": "Heavy snow warning",
+    "notes": ""
+  },
+  "12": {
+    "warningCode": "12",
+    "phenomenon": "大雪",
+    "level": null,
+    "category": "注意報",
+    "nameJa": "大雪注意報",
+    "nameEn": "Heavy snow advisory",
+    "notes": ""
+  },
+  "37": {
+    "warningCode": "37",
+    "phenomenon": "波浪",
+    "level": null,
+    "category": "特別警報",
+    "nameJa": "波浪特別警報",
+    "nameEn": "High waves special warning",
+    "notes": ""
+  },
+  "07": {
+    "warningCode": "07",
+    "phenomenon": "波浪",
+    "level": null,
+    "category": "警報",
+    "nameJa": "波浪警報",
+    "nameEn": "High waves warning",
+    "notes": ""
+  },
+  "16": {
+    "warningCode": "16",
+    "phenomenon": "波浪",
+    "level": null,
+    "category": "注意報",
+    "nameJa": "波浪注意報",
+    "nameEn": "High waves advisory",
+    "notes": ""
+  },
+  "14": {
+    "warningCode": "14",
+    "phenomenon": "雷",
+    "level": null,
+    "category": "注意報",
+    "nameJa": "雷注意報",
+    "nameEn": "Thunderstorm advisory",
+    "notes": ""
+  },
+  "17": {
+    "warningCode": "17",
+    "phenomenon": "融雪",
+    "level": null,
+    "category": "注意報",
+    "nameJa": "融雪注意報",
+    "nameEn": "Snowmelt advisory",
+    "notes": ""
+  },
+  "20": {
+    "warningCode": "20",
+    "phenomenon": "濃霧",
+    "level": null,
+    "category": "注意報",
+    "nameJa": "濃霧注意報",
+    "nameEn": "Dense fog advisory",
+    "notes": ""
+  },
+  "21": {
+    "warningCode": "21",
+    "phenomenon": "乾燥",
+    "level": null,
+    "category": "注意報",
+    "nameJa": "乾燥注意報",
+    "nameEn": "Dry air advisory",
+    "notes": ""
+  },
+  "22": {
+    "warningCode": "22",
+    "phenomenon": "なだれ",
+    "level": null,
+    "category": "注意報",
+    "nameJa": "なだれ注意報",
+    "nameEn": "Avalanche advisory",
+    "notes": ""
+  },
+  "23": {
+    "warningCode": "23",
+    "phenomenon": "低温",
+    "level": null,
+    "category": "注意報",
+    "nameJa": "低温注意報",
+    "nameEn": "Low temperature advisory",
+    "notes": ""
+  },
+  "24": {
+    "warningCode": "24",
+    "phenomenon": "霜",
+    "level": null,
+    "category": "注意報",
+    "nameJa": "霜注意報",
+    "nameEn": "Frost advisory",
+    "notes": ""
+  },
+  "25": {
+    "warningCode": "25",
+    "phenomenon": "着氷",
+    "level": null,
+    "category": "注意報",
+    "nameJa": "着氷注意報",
+    "nameEn": "Icing advisory",
+    "notes": ""
+  },
+  "26": {
+    "warningCode": "26",
+    "phenomenon": "着雪",
+    "level": null,
+    "category": "注意報",
+    "nameJa": "着雪注意報",
+    "nameEn": "Snow accretion advisory",
+    "notes": ""
+  },
+  "27": {
+    "warningCode": "27",
+    "phenomenon": "その他",
+    "level": null,
+    "category": "注意報",
+    "nameJa": "その他の注意報",
+    "nameEn": "Other advisory",
+    "notes": "その他の気象注意報としてとりまとめられる場合があります"
+  },
+  "00": {
+    "warningCode": "00",
+    "phenomenon": "解除",
+    "level": null,
+    "category": "解除",
+    "nameJa": "解除",
+    "nameEn": "Release",
+    "notes": "令和8年体系のスキーマでは運用しないとされています"
+  }
+}

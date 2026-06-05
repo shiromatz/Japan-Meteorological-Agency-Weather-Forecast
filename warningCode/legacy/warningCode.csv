@@ -1,0 +1,32 @@
+warningCode,phenomenon,level,category,nameJa,nameEn,notes
+32,暴風雪・風雪,,特別警報,暴風雪特別警報,Blizzard special warning,
+02,暴風雪・風雪,,警報,暴風雪警報,Blizzard warning,
+13,暴風雪・風雪,,注意報,風雪注意報,Snowstorm advisory,暴風雪警報に対応する注意報は風雪注意報
+33,大雨,,特別警報,大雨特別警報,Heavy rain special warning,Conditionで土砂災害や浸水害などに細分される場合があります
+03,大雨,,警報,大雨警報,Heavy rain warning,Conditionで土砂災害や浸水害などに細分される場合があります
+10,大雨,,注意報,大雨注意報,Heavy rain advisory,Conditionで土砂災害や浸水害などに細分される場合があります
+04,洪水,,警報,洪水警報,Flood warning,
+18,洪水,,注意報,洪水注意報,Flood advisory,
+35,暴風・強風,,特別警報,暴風特別警報,Storm special warning,
+05,暴風・強風,,警報,暴風警報,Storm warning,
+15,暴風・強風,,注意報,強風注意報,Strong wind advisory,暴風警報に対応する注意報は強風注意報
+36,大雪,,特別警報,大雪特別警報,Heavy snow special warning,
+06,大雪,,警報,大雪警報,Heavy snow warning,
+12,大雪,,注意報,大雪注意報,Heavy snow advisory,
+37,波浪,,特別警報,波浪特別警報,High waves special warning,
+07,波浪,,警報,波浪警報,High waves warning,
+16,波浪,,注意報,波浪注意報,High waves advisory,
+38,高潮,,特別警報,高潮特別警報,Storm surge special warning,
+08,高潮,,警報,高潮警報,Storm surge warning,
+19,高潮,,注意報,高潮注意報,Storm surge advisory,
+14,雷,,注意報,雷注意報,Thunderstorm advisory,
+17,融雪,,注意報,融雪注意報,Snowmelt advisory,
+20,濃霧,,注意報,濃霧注意報,Dense fog advisory,
+21,乾燥,,注意報,乾燥注意報,Dry air advisory,
+22,なだれ,,注意報,なだれ注意報,Avalanche advisory,
+23,低温,,注意報,低温注意報,Low temperature advisory,
+24,霜,,注意報,霜注意報,Frost advisory,
+25,着氷,,注意報,着氷注意報,Icing advisory,
+26,着雪,,注意報,着雪注意報,Snow accretion advisory,
+27,その他,,注意報,その他の注意報,Other advisory,
+00,解除,,解除,解除,Release,警報・注意報の状態値とは別の種別コードです
