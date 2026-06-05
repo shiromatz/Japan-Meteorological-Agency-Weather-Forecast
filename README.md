@@ -105,6 +105,15 @@ CSV 列:
 
 `weatherCodes.json` は `weatherCode` をキーにした JSON オブジェクトで、値は `weatherPictDay`、`weatherPictNight`、`Group`、`weatherJ`、`weatherE` の順の配列です。
 
+## 警報・注意報コード対応表
+
+`warning` の `warningCode` を読み取るための対応表は、警報・注意報の体系別に配置しています。
+
+- `warningCode/legacy/warningCode.csv` / `warningCode/legacy/warningCodes.json`: 2026年5月28日以前の体系
+- `warningCode/r8/warningCode.csv` / `warningCode/r8/warningCodes.json`: 2026年5月29日以降の令和8年体系
+
+`warningCode` は `02` や `03` のように先頭ゼロを含むため、文字列として扱ってください。対応表の詳細は [`warningCode/README.md`](warningCode/README.md) を参照してください。
+
 ## 警報・注意報 (`warning`)
 
 気象庁が発表した警報・注意報の発表履歴です。観測値や実際に発生した気象現象の記録ではありません。
@@ -150,6 +159,8 @@ CSV 列:
 - `warningStatuses`: その行で確認された `warningCode` ごとの状態を表す JSON オブジェクト
 
 `activeWarningCodes` は、その時点で発表中の警報・注意報コードの集合です。`warningStatuses` には、発表中のコードの状態と、その行で解除されたコードの状態が入ります。状態値には `発表`、`継続`、`解除`、`警報から注意報`、`注意報から警報` などが含まれます。
+
+`warningCode` の名称は、`reportDatetime` が 2026年5月28日以前の場合は `warningCode/legacy/`、2026年5月29日以降の場合は `warningCode/r8/` の対応表を参照してください。
 
 同じ `areaType`・`areaCode` について、同一日内に同じ状態が繰り返される行は削除しています。一方で、警報・注意報が継続している場合は、日付が変わった最初の確認行が残ることがあります。行がない日は、必ずしも欠測ではなく、状態変化や残すべき確認行がなかったことを意味する場合があります。
 

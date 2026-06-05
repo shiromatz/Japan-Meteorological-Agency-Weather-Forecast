@@ -105,6 +105,15 @@ Columns in `weatherCode.csv`:
 
 `weatherCodes.json` is a JSON object keyed by `weatherCode`. Each value is an array in the order `weatherPictDay`, `weatherPictNight`, `Group`, `weatherJ`, and `weatherE`.
 
+## Warning and Advisory Code Tables
+
+Lookup tables for `warningCode` in `warning` are separated by warning/advisory system.
+
+- `warningCode/legacy/warningCode.csv` / `warningCode/legacy/warningCodes.json`: system used through 2026-05-28
+- `warningCode/r8/warningCode.csv` / `warningCode/r8/warningCodes.json`: Reiwa 8 system used from 2026-05-29
+
+Treat `warningCode` as a string because some codes contain leading zeroes such as `02` and `03`. See [`warningCode/README.en.md`](warningCode/README.en.md) for details.
+
 ## Warnings and Advisories (`warning`)
 
 This data is the issuance history of JMA warnings and advisories. It is not a record of observations or actual weather events.
@@ -150,6 +159,8 @@ Columns:
 - `warningStatuses`: JSON object containing the status of each `warningCode` confirmed on that row
 
 `activeWarningCodes` is the set of warning/advisory codes active at that time. `warningStatuses` contains statuses for active codes and for codes cancelled on that row. Status values include `発表`, `継続`, `解除`, `警報から注意報`, and `注意報から警報`.
+
+For `warningCode` names, use `warningCode/legacy/` when `reportDatetime` is on or before 2026-05-28, and `warningCode/r8/` when `reportDatetime` is on or after 2026-05-29.
 
 For the same `areaType` and `areaCode`, repeated rows with the same state on the same date are removed. If warnings or advisories continue across dates, the first confirmation row on a new date may remain. A date with no row does not always mean the data is missing; it may mean there was no state change or no confirmation row that needed to be kept.
 
